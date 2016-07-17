@@ -12,17 +12,20 @@ class UdaciList
     @items.push LinkItem.new(description, options) if type == "link"
   end
   def delete(index)
-    @items.delete_at(index - 1) unless
-    @items.length > index
+    if index > @items.length
     raise UdaciListErrors::IndexExceedsListSize
-
+    else
+    @items.delete_at(index - 1)
+    end
   end
   def all
-    puts "-" * @title.length
+    puts "-" * @title.length unless
+    @title == nil
     puts @title
-    puts "-" * @title.length
+    puts "-" * @title.length unless
+    @title == nil
     @items.each_with_index do |item, position|
-      puts "#{position + 1}) #{item.details}"
+    puts "#{position + 1}) #{item.details}"
     end
 
   end

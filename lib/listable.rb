@@ -12,15 +12,15 @@ module Listable
     dates = "N/A" if !dates
     return dates
   end
-  def format_date(type, options={})
-    return  one_date_format(options) if type == one_date
-    return  two_date_format(options) if type == two_date
+  def format_date(kind, options={})
+    return  one_date_format(options) if kind == :todo
+    return  two_date_format(options) if kind == :event
 
   end
   def format_priority(priority)
-    value = " ⇧" if @priority == "high"
-    value = " ⇨" if @priority == "medium"
-    value = " ⇩" if @priority == "low"
+    value = " ⇧".colorize(:red) if @priority == "high"
+    value = " ⇨".colorize(:yellow) if @priority == "medium"
+    value = " ⇩".colorize(:green) if @priority == "low"
     value = "" if !@priority
     return value
   end

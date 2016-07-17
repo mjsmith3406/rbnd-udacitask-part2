@@ -3,8 +3,9 @@ class TodoItem
   attr_reader :description, :due, :priority
 
   def initialize(description, options={})
+    @kind = "todo"
     @description = description
-    @due = options[:due] ? Date.parse(options[:due]) : options[:due]
+    @due = options[:due] ? Chronic.parse(options[:due]) : options[:due]
     @priority = options[:priority]
   end
 
@@ -20,7 +21,7 @@ class TodoItem
   # end
   def details
     format_description(@description) + "due: " +
-    format_date +
+    format_date(:todo) +
     format_priority(priority)
   end
 end
