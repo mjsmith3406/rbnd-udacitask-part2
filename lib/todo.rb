@@ -1,12 +1,12 @@
 class TodoItem
    include Listable
   attr_reader :description, :due, :priority
-  @priority_array = ["low", "medium", "high", " "]
   def initialize(description, options={})
+    @priority_array = ["low", "medium", "high"]
     @kind = "todo"
     @description = description
     @due = options[:due] ? Chronic.parse(options[:due]) : options[:due]
-    @priority = options[:priority] unless
+    @priority = options[:priority]
     if @priority
       unless @priority_array.include? @priority
         raise UdaciListErrors::InvalidPriorityValue, "#{@priority}, not correct"

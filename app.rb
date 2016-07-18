@@ -1,5 +1,6 @@
  require 'chronic'
  require 'colorize'
+ require 'terminal-display-formats'
 # Find a third gem of your choice and add it to your project
 require 'date'
 require_relative "lib/listable"
@@ -9,7 +10,7 @@ require_relative "lib/todo"
 require_relative "lib/event"
 require_relative "lib/link"
 
-list = UdaciList.new(title: "Julia's Stuff")
+list = UdaciList.new(title: "Julia's Stuff".bold)
 list.add("todo", "Buy more cat food", due: "2016-02-03", priority: "low")
 list.add("todo", "Sweep floors", due: "2016-01-30")
 list.add("todo", "Buy groceries", priority: "high")
