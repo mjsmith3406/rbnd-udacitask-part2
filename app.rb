@@ -32,7 +32,7 @@ list.all
  new_list.add("event", "Life happens")
  new_list.add("link", "https://www.udacity.com/", site_name: "Udacity Homepage")
  new_list.add("link", "http://ruby-doc.org")
-# new_list.add("buy", "a life", priority: "high")
+# new_list.add("buy", "Need to buy", )# needs work
 
 # SHOULD RETURN ERROR MESSAGES
 # ----------------------------

@@ -1,4 +1,5 @@
-class UdaciList
+require_relative 'buy.rb'
+class UdaciList < Buy
   attr_reader :title, :items
 
   def initialize(options={})
@@ -12,7 +13,7 @@ class UdaciList
       when "todo" then @items.push TodoItem.new(description, options)
       when "event" then @items.push EventItem.new(description, options)
       when "link" then @items.push LinkItem.new(description, options)
-      when "buy" then @items.push Buy.new(description, options)
+      when "buy" then @items.push Buy.new(description)
       else raise UdaciListErrors::InvalidItemType, "#{type} is invalid"
     end
 
