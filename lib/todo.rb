@@ -3,7 +3,6 @@ class TodoItem
   attr_reader :description, :due, :priority
   def initialize(description, options={})
     @priority_array = ["low", "medium", "high"]
-    @kind = "todo"
     @description = description
     @due = options[:due] ? Chronic.parse(options[:due]) : options[:due]
     @priority = options[:priority]

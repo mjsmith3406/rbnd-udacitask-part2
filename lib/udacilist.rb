@@ -12,8 +12,10 @@ class UdaciList
       when "todo" then @items.push TodoItem.new(description, options)
       when "event" then @items.push EventItem.new(description, options)
       when "link" then @items.push LinkItem.new(description, options)
+      when "buy" then @items.push Buy.new(description, options)
       else raise UdaciListErrors::InvalidItemType, "#{type} is invalid"
     end
+
   end
   def delete(index)
     if index > @items.length
@@ -31,7 +33,8 @@ class UdaciList
     @items.each_with_index do |item, position|
     puts "#{position + 1}) #{item.details}"
     end
-    
-
   end
+
+
+
 end
