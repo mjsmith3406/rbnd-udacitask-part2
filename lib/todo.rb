@@ -12,6 +12,7 @@ class TodoItem
       end
     end
   end
+  
   def details
     format_description(@description) + "due: " +
     format_date(:todo) +

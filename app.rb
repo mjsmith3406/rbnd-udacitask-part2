@@ -1,6 +1,7 @@
  require 'chronic'
  require 'colorize'
  require 'terminal-display-formats'
+ require 'bundler/setup'
 # Find a third gem of your choice and add it to your project
 require 'date'
 require_relative "lib/listable"
@@ -9,6 +10,8 @@ require_relative "lib/udacilist"
 require_relative "lib/todo"
 require_relative "lib/event"
 require_relative "lib/link"
+require_relative 'lib/buy'
+require_relative 'lib/item'
 
 list = UdaciList.new(title: "Julia's Stuff".bold)
 list.add("todo", "Buy more cat food", due: "2016-02-03", priority: "low")
@@ -24,15 +27,15 @@ list.all
 # SHOULD CREATE AN UNTITLED LIST AND ADD ITEMS TO IT
 # --------------------------------------------------
  new_list = UdaciList.new # Should create a list called "Untitled List"
- new_list.add("todo", "Buy more dog food", due: "in 5 weeks", priority: "medium")
+ new_list.add("todo", "Buy more dog food", due: "in 5 weeks", priority: "medium")#medium
  new_list.add("todo", "Go dancing", due: "in 2 hours")
- new_list.add("todo", "Buy groceries", priority: "high")
+ new_list.add("todo", "Buy groceries", priority: "high")#high
  new_list.add("event", "Birthday Party", start_date: "May 31")
  new_list.add("event", "Vacation", start_date: "Dec 20", end_date: "Dec 30")
  new_list.add("event", "Life happens")
  new_list.add("link", "https://www.udacity.com/", site_name: "Udacity Homepage")
  new_list.add("link", "http://ruby-doc.org")
-# new_list.add("buy", "Need to buy", )# needs work
+ new_list.add("buy", "Buy a hat", priority: "high" )
 
 # SHOULD RETURN ERROR MESSAGES
 # ----------------------------
@@ -47,3 +50,4 @@ list.all
 # DEMO FILTER BY ITEM TYPE
 # ------------------------
 # new_list.filter("event")
+ new_list.sort_by_priority

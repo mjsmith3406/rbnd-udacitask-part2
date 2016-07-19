@@ -1,9 +1,9 @@
-class Buy
+class BuyItem
   include Listable
-  attr_reader :type, :description
+  attr_reader :description
 
-  def initialize(description)
-    @type = type
+  def initialize(description, options={})
+    @type = "buy"
     @description = description
   end
 

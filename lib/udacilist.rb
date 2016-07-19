@@ -1,6 +1,6 @@
-require_relative 'buy.rb'
-class UdaciList < Buy
+class UdaciList
   attr_reader :title, :items
+  include Listable
 
   def initialize(options={})
     @title = options[:title]
@@ -13,7 +13,7 @@ class UdaciList < Buy
       when "todo" then @items.push TodoItem.new(description, options)
       when "event" then @items.push EventItem.new(description, options)
       when "link" then @items.push LinkItem.new(description, options)
-      when "buy" then @items.push Buy.new(description)
+      when "buy" then @items.push BuyItem.new(description)
       else raise UdaciListErrors::InvalidItemType, "#{type} is invalid"
     end
 
@@ -23,6 +23,14 @@ class UdaciList < Buy
     raise UdaciListErrors::IndexExceedsListSize
     else
     @items.delete_at(index - 1)
+    end
+  end
+  def sort_by_priority
+    if
+      sort_array = @items.sort_by {|item| item.priority}
+      puts sort_array
+    else
+      puts "nothing happed in this test. Delete me."
     end
   end
   def all
@@ -35,7 +43,9 @@ class UdaciList < Buy
     puts "#{position + 1}) #{item.details}"
     end
   end
+  def filter(type)
 
+  end
 
 
 end
