@@ -13,12 +13,12 @@ module Listable
     return dates
   end
   def set_priority(input, value)
-    @items.find_index(input - 1)
+    @items.index { |item| item.index == input }
     @priority = value
   end
   def format_date(kind, options={})
-    return  one_date_format(options) if kind == :todo
-    return  two_date_format(options) if kind == :event
+    return  one_date_format(options) if kind == :one_date
+    return  two_date_format(options) if kind == :two_date
 
   end
   def format_priority(priority)

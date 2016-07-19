@@ -2,6 +2,7 @@ class TodoItem
    include Listable
   attr_reader :description, :due, :priority
   def initialize(description, options={})
+    @type = "todo"
     @priority_array = ["low", "medium", "high"]
     @description = description
     @due = options[:due] ? Chronic.parse(options[:due]) : options[:due]
@@ -14,8 +15,8 @@ class TodoItem
   end
 
   def details
-    format_description(@description) + "due: " +
-    format_date(:todo) +
-    format_priority(priority)
+    row = []
+    row << format_description(@description)
+    row << "due: " + format_date(:one_date, date: @due) + format_priority(@priority)
   end
 end

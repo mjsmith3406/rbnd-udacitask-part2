@@ -8,6 +8,7 @@ class BuyItem
   end
 
   def details
-    format_description(@description)
+    row = []
+    row << format_description(@description)
   end
 end

@@ -1,17 +1,21 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    artii (2.1.1)
     chronic (0.10.2)
     colorize (0.8.1)
     terminal-display-formats (0.0.1)
+    terminal-table (1.6.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  artii (= 2.1.1)
   chronic (= 0.10.2)
   colorize (= 0.8.1)
   terminal-display-formats (= 0.0.1)
+  terminal-table (= 1.6.0)
 
 BUNDLED WITH
    1.12.5
