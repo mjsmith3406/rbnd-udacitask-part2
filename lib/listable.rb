@@ -12,6 +12,10 @@ module Listable
     dates = "N/A" if !dates
     return dates
   end
+  def set_priority(input, value)
+    @items.find_index(input - 1)
+    @priority = value
+  end
   def format_date(kind, options={})
     return  one_date_format(options) if kind == :todo
     return  two_date_format(options) if kind == :event

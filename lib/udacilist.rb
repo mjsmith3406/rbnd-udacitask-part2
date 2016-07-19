@@ -25,14 +25,7 @@ class UdaciList
     @items.delete_at(index - 1)
     end
   end
-  def sort_by_priority
-    if
-      sort_array = @items.sort_by {|item| item.priority}
-      puts sort_array
-    else
-      puts "nothing happed in this test. Delete me."
-    end
-  end
+
   def all
     puts "-" * @title.length unless
     @title == nil

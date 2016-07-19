@@ -50,4 +50,4 @@ list.all
 # DEMO FILTER BY ITEM TYPE
 # ------------------------
 # new_list.filter("event")
- new_list.sort_by_priority
+ new_list.set_priority(1, "high")
