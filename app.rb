@@ -14,6 +14,7 @@ require_relative "lib/event"
 require_relative "lib/link"
 require_relative 'lib/buy'
 require_relative 'lib/item'
+require_relative 'lib/locations'
 
 list = UdaciList.new(title: "Julia's Stuff".bold)
 list.add("todo", "Buy more cat food", due: "2016-02-03", priority: "low")
@@ -37,7 +38,8 @@ list.all
  new_list.add("event", "Life happens")
  new_list.add("link", "https://www.udacity.com/", site_name: "Udacity Homepage")
  new_list.add("link", "http://ruby-doc.org")
- new_list.add("buy", "Buy a hat", priority: "high" )
+ new_list.add("buy", "Buy a hat")
+ new_list.add("loacations", "Visit new resturant")
 
 # SHOULD RETURN ERROR MESSAGES
 # ----------------------------
@@ -52,4 +54,3 @@ list.all
 # DEMO FILTER BY ITEM TYPE
 # ------------------------
  new_list.filter("event")
-# new_list.set_priority(1, "high")

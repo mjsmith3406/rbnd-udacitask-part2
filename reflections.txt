@@ -1,4 +1,16 @@
 # What you added to Udacitask 2.0
+I used the gems artii, terminal-table, and terminal-display-formats. They are all to help format the output. The terminal-display-formats I used to bold the title.
+The two features I added were two new types.
+1) locations - I thought this would be nice because everybody as some place they would like to go. Either a new restaurant, museum, or anywhere.
+2) buy - Face it there is always something somebody needs. Whether it be dish soap, charcoal, or bird food. This way a person can remember to pick it up.
+
+I spent about a week working on this give or take. This was the hardest project yet given the two custom features I added. I worked forever trying to get
+several other features working and failed. But given I worked very hard on this project.
+
+The most rewarding chalenge to overcome was getting the output right. I feel great that I figured it out.
+
+I still have room to grow in a lot of small stuff that always trips me up. For example knowing when to add paramiters to a method. I always forget that. and naming conventions I needs
+to work on.
 # -------------------------------------------------------
 1. What is the gem of your choice and how did you use it?
 2. Describe the 2 features you added to the project.

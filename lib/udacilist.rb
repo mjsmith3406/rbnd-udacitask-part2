@@ -14,6 +14,7 @@ class UdaciList
       when "event" then @items.push EventItem.new(description, options)
       when "link" then @items.push LinkItem.new(description, options)
       when "buy" then @items.push BuyItem.new(description)
+      when "loacations" then @items.push LocationsItem.new(description)
       else raise UdaciListErrors::InvalidItemType, "#{type} is invalid"
     end
 
@@ -39,7 +40,7 @@ class UdaciList
     end
   end
   def puts_table(top, row_array)
-    askii = Artii::Base.new(font: 'digital')
+    askii = Artii::Base.new(font: 'graceful')
     puts askii.asciify(top)
     table = Terminal::Table.new rows: row_array
     puts table
