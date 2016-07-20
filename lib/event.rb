@@ -1,4 +1,5 @@
-class EventItem
+require_relative 'item'
+class EventItem < Items
   include Listable
   attr_reader :description, :start_date, :end_date
 

@@ -27,26 +27,18 @@ class UdaciList
   end
 
   def all
-    # puts "-" * @title.length unless
-    # @title == nil
-    # puts @title
-    # puts "-" * @title.length unless
-    # @title == nil
-    # @items.each_with_index do |item, position|
-    # puts "#{position + 1}) #{item.details}"
-    # end
     puts_table(@title, make_row_array(@items))
   end
   def filter(type)
     filtered = @items.select { |item| item.type == type}
-    if filtered <= 0
-      puts "#{type} not found."
-    else
+    if filtered.length  > 0
       top ="#{@title} #{type}"
-      puts_table(top, content_array(filtered))
+      puts_table(top, make_row_array(filtered))
+    else
+      puts "#{type} not found."
     end
   end
-  def puts_table(top, content_array)
+  def puts_table(top, row_array)
     askii = Artii::Base.new(font: 'digital')
     puts askii.asciify(top)
     table = Terminal::Table.new rows: row_array

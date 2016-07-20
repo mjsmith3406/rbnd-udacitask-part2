@@ -1,4 +1,5 @@
-class TodoItem
+require_relative 'item'
+class TodoItem < Items
    include Listable
   attr_reader :description, :due, :priority
   def initialize(description, options={})

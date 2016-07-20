@@ -1,4 +1,4 @@
-class Item
+class Items
   attr_reader :description, :type
 
   def initialize(description, type)

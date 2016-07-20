@@ -1,4 +1,5 @@
-class BuyItem
+require_relative 'item'
+class BuyItem < Items
   include Listable
   attr_reader :description
 
