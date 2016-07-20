@@ -12,7 +12,7 @@ class EventItem < Items
 
   def details
     row = []
-    row << format_description(@description)
+    row << type + " " + format_description(@description)
     row << "event dates: " + format_date(:two_date, start_date: @start_date, end_date: @end_date)
   end
 end

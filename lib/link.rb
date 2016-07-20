@@ -13,7 +13,7 @@ class LinkItem < Items
   end
   def details
      row = []
-     row << format_description(@description)
+     row << type + " " + format_description(@description)
      row << "site name: " + format_name
   end
 end

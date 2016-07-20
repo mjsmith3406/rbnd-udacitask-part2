@@ -10,6 +10,6 @@ class BuyItem < Items
 
   def details
     row = []
-    row << format_description(@description)
+    row << type + " " + format_description(@description)
   end
 end
